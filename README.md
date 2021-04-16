@@ -1,5 +1,7 @@
 # navigation-warthog
-### Técnicas 
+### Warthog + Velodyne 
+#### 
+### Methods 
   - Gmapping
   - AMCL
   - Hector SLAM
