@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find warthog_gazebo)/launch/warthog_world.launch"/>
+
+    <!--convert pointcloud 3d to 2d (pointcloud_to_laserscan)--> 
+    <node name="pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node"   >
+        <remap from="scan" to="laser/scan"/>
+        <remap from="cloud_in" to="velodyne_points"/>
+        <rosparam command="load" file="$(find warthog_navigation)/config/pointcloud.yaml"/>
+    </node>
+
+    <include file="$(find warthog_navigation)/launch/gmapping.launch"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find warthog_navigation)/rviz/gmapping.rviz" >
+        <param name="frame_id" value="/odom" />
+    </node>
+    <include file="$(find warthog_navigation)/launch/move_base.launch" />
+
+</launch>
