@@ -3,9 +3,9 @@
  The [Warthog](https://github.com/warthog-cpr/warthog) robot was equipped with [Velodyne](https://github.com/lmark1/velodyne_simulator) 16 Lidar, so the packages warthog_description and warthog_control was modified
 #### 
 ### Methods 
-  - Gmapping
-  - AMCL
-  - Hector SLAM
+  - [Gmapping](http://wiki.ros.org/gmapping)
+  - [AMCL](http://wiki.ros.org/amcl)
+  - [Hector SLAM](http://wiki.ros.org/hector_slam)
 ### instructions
 
   ```
